@@ -5,8 +5,9 @@ import Image from "next/image";
 import { Typewriter, useTypewriter } from "react-simple-typewriter";
 import { PiSuitcaseSimpleThin } from 'react-icons/pi';
 import { Canvas } from "@react-three/fiber";
-import Blob from "./components/Three/Blob";
-
+import Blob from "./components/Blob/Blob";
+import { GiAirplane } from 'react-icons/gi';
+import Square from "./components/Square/Square";
 
 function Page() {
 
@@ -16,14 +17,16 @@ function Page() {
 			dates: 'Nov. 2022 - Present',
 			title: 'Software Engineer',
 			description: 'Development of multiple applications for company management using Node.js and MongoDB.',
-			image: '/images/sweeppea-white.png'
+			image: '/images/sweeppea-white.png',
+			size: 50
 		},
 		{
 			business: 'Finket',
 			dates: 'Jan 2022 - March 2023',
 			title: 'Software Engineer',
 			description: 'Development of financial solutions using ReactJS, Express and AWS as core technologies.',
-			image: '/images/finket.png'
+			image: '/images/finket.png',
+			size: 50
 		},
 		{
 			business: 'Acquatron',
@@ -31,7 +34,7 @@ function Page() {
 			title: 'Software Engineer',
 			description: 'My main task was the development of customized software solutions for the management of the company. Using C++ and MySQL I designed a comprehensive software for stock management and equipment production. This software not only eliminated the need to keep inventory manually, but also maximized efficiency in defining daily production and order fulfillment.',
 			image: '/images/acquatron.png',
-			size: 375
+			size: 130
 		},
 	];
 
@@ -43,12 +46,12 @@ function Page() {
 						Agustin Laurito
 					</div>
 					<div className="text-6xl font-mono min-h-[3.75rem]">
-						<Typewriter words={['Software Engineer', 'Pilot']} loop />
+						<Typewriter words={['Software Engineer', 'Helping Startups to Grow']} loop />
 					</div>
 				</div>
 				<div className="w-1/2 h-3/4">
 					<Canvas camera={{ position: [0.0, 0.0, 8.0] }}>
-						<Blob />
+						<Blob scale={1.1} />
 					</Canvas>
 				</div>
 			</div>
@@ -61,7 +64,7 @@ function Page() {
 				</div>
 				<div className="flex w-1/2 flex-col items-center px-12">
 					<span className="text-white text-2xl font-mono text-justify">
-						Welcome to the portfolio of Agustin Laurito, a software developer whos been dazzling the tech world with his skills. Hes made significant contributions at Acquatron, Finket, and now Sweeppea.
+						With three years of hands-on experience in the dynamic startup landscape, I've honed my skills in transforming innovative ideas into functional software solutions. My journey has been defined by collaborating closely with startups, understanding their unique needs, and delivering results-driven digital products. I thrive on the challenge of turning visionary concepts into tangible, market-ready assets, contributing to the growth and success of emerging ventures
 					</span>
 				</div>
 			</div>
@@ -76,21 +79,28 @@ function Page() {
 
 				{
 					descriptions.map((e, i) =>
-						<motion.div whileHover={{ scale: 1.01 }} key={i} className="w-3/4 bg-accentLight rounded-full py-5 pl-5 pr-16 flex flex-row gap-5 mt-12 items-center">
+						<div key={i} className="w-3/4 bg-accentLight rounded-full py-4 pl-5 pr-16 flex flex-row gap-5 mt-12 items-center">
 
-							<div className="bg-white shadow-xl rounded-full p-12 mr-12">
+							<div className="bg-white shadow-xl rounded-full p-8 mr-6">
 								<Image src={e.image} alt="Sweeppea" height={e.size || 100} width={e.size || 100} />
 							</div>
 
 							<div className="flex flex-col">
-								<span className="text-4xl text-white font-mono">{e.business}</span>
-								<span className="text-lg text-slate-400 font-mono">{ e.dates }</span>
-								<span className="text-2xl text-white my-5">{e.title}</span>
-								<span className="text-lg text-white font-mono">{e.description}</span>
+								<span className="text-2xl text-white font-mono">{e.business}</span>
+								<span className="text-md text-slate-400 font-mono">{ e.dates }</span>
+								<span className="text-xl text-white my-2">{e.title}</span>
+								<span className="text-md text-white font-mono">{e.description}</span>
 							</div>
-						</motion.div>
+						</div>
 					)
 				}
+
+				<div className="w-full h-1/4 py-12" >
+					<Canvas camera={{ position: [0.0, 0.0, 50.0] }}>
+						<Square />
+					</Canvas>
+				</div>
+
 			</div>
 
 
