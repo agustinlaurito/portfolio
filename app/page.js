@@ -2,9 +2,26 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Typewriter } from "react-simple-typewriter";
+import { Typewriter, useTypewriter } from "react-simple-typewriter";
 import { PiSuitcaseSimpleThin } from 'react-icons/pi';
+
+
 function Page() {
+
+	const descriptions = [
+		{
+			business: 'Sweeppea',
+			dates: 'Nov. 2022 - Present',
+			title: 'Software Engineer',
+			description: 'Development of multiple applications for company management using Node.js and MongoDB.'
+		},
+		{
+			business: 'Finket',
+			dates: 'Jan 2022 - March 2023',
+			title: 'Software Engineer',
+			description: 'Development of financial solutions using ReactJS, Express and AWS as core technologies.'
+		},
+	];
 
 	return(
 		<div>
@@ -13,7 +30,7 @@ function Page() {
 					<div className="text-background text-8xl">
 						Agustin Laurito
 					</div>
-					<div className="text-6xl font-mono">
+					<div className="text-6xl font-mono min-h-[3.75rem]">
 						<Typewriter words={['Backend Developer', 'Frontend Developer', 'Pilot', 'Software Engineer']} loop />
 					</div>
 				</div>
@@ -22,7 +39,7 @@ function Page() {
 				</div>
 			</div>
 
-			<div className="w-full bg-accent flex flex-row items-center py-28">
+			<div className="w-full bg-black flex flex-row items-center py-28">
 				<div className="flex w-1/2 flex-col items-center">
 					<span className="text-white text-6xl">
 						Turning Ideas into Reality
@@ -37,85 +54,34 @@ function Page() {
 
 
 
-			<div className="w-full min-h-screen flex flex-col items-center bg-black pb-12">
+			<div className="w-full min-h-screen flex flex-col items-center bg-accent pb-12">
 
 				<span className="text-6xl text-light mt-16 mb-8">
 					Experience
 				</span>
 
-				<div className="w-3/4 bg-gray rounded-full py-5 pl-5 pr-16 flex flex-row gap-5 mt-12 items-center">
+				{
+					descriptions.map((e, i) =>
+						<div key={i} className="w-3/4 bg-accentLight rounded-full py-5 pl-5 pr-16 flex flex-row gap-5 mt-12 items-center">
 
-					<div className="bg-light rounded-full p-5">
-						<PiSuitcaseSimpleThin color="#0D0D0D" size={80} />
-					</div>
+							<div className="bg-slate-300 rounded-full p-5">
+								<PiSuitcaseSimpleThin color="#0D0D0D" size={80} />
+							</div>
 
-					<div className="bg-white rounded-full flex justify-center items-center w-1" />
+							<div className="bg-white rounded-full flex justify-center items-center w-1" />
 
-					<div className="flex flex-col">
-						<span className="text-2xl text-white font-mono">
-							Sweeppea
-						</span>
-						<span className="text-lg text-slate-400 font-mono">
-							Nov. 2022 - Present
-						</span>
-						<span className="text-xl text-white my-5">
-							Software Engineer
-						</span>
-						<span className="text-sm text-white font-mono">Development of multiple applications for company management using Node.js and MongoDB.</span>
-					</div>
-				</div>
-
-				<div className="w-3/4 bg-gray rounded-full py-5 pl-5 pr-16 flex flex-row gap-5 mt-12 items-center">
-
-					<div className="bg-light rounded-full p-5">
-						<PiSuitcaseSimpleThin color="#0D0D0D" size={80} />
-					</div>
-
-					<div className="bg-white rounded-full flex justify-center items-center w-1" />
-
-					<div className="flex flex-col">
-						<span className="text-2xl text-white font-mono">
-							Finket
-						</span>
-						<span className="text-lg text-slate-400 font-mono">
-							Jan 2022 - March 2023
-						</span>
-						<span className="text-xl text-white my-5">
-							Software Engineer
-						</span>
-						<span className="text-sm text-white font-mono">Development of financial solutions using ReactJS, Express and AWS as core technologies.</span>
-					</div>
-				</div>
-
-				<div className="w-3/4 bg-gray rounded-full py-5 pl-5 pr-16 flex flex-row gap-5 mt-12 items-center">
-
-					<div className="bg-light rounded-full p-5">
-						<PiSuitcaseSimpleThin color="#0D0D0D" size={80} />
-					</div>
-
-					<div className="bg-white rounded-full flex justify-center items-center w-1" />
-
-					<div className="flex flex-col">
-						<span className="text-2xl text-white font-mono">
-							Acquatron
-						</span>
-						<span className="text-lg text-slate-400 font-mono">
-							Nov. 2020 - Jan 2022
-						</span>
-						<span className="text-xl text-white my-5">
-							Software Developer
-						</span>
-						<span className="text-sm text-white font-mono">My main task was the development of customized software solutions for the management of the company. Using C++ and MySQL I designed a comprehensive software for stock management and equipment production. This software not only eliminated the need to keep inventory manually, but also maximized efficiency in defining daily production and order fulfillment.</span>
-					</div>
-				</div>
+							<div className="flex flex-col">
+								<span className="text-4xl text-white font-mono">{e.business}</span>
+								<span className="text-lg text-slate-400 font-mono">{ e.dates }</span>
+								<span className="text-xl text-white my-5">{e.title}</span>
+								<span className="text-sm text-white font-mono">{e.description}</span>
+							</div>
+						</div>
+					)
+				}
 			</div>
 
-			<div className="w-full h-screen flex flex-col items-center bg-white">
 
-				<span className="text-6xl text-light mt-16 mb-8">
-					Personal Work
-				</span>
-			</div>
 		</div>
 
 
