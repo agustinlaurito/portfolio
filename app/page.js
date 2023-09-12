@@ -1,113 +1,110 @@
-import Image from 'next/image'
+'use client';
 
-export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { Typewriter } from "react-simple-typewriter";
+import { PiSuitcaseSimpleThin } from 'react-icons/pi';
+function Page() {
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+	return(
+		<div>
+			<div className="w-full h-screen flex flex-row items-center">
+				<div className="flex w-1/2 flex-col items-center">
+					<div className="text-background text-8xl">
+						Agustin Laurito
+					</div>
+					<div className="text-6xl font-mono">
+						<Typewriter words={['Backend Developer', 'Frontend Developer', 'Pilot', 'Software Engineer']} loop />
+					</div>
+				</div>
+				<div className="flex w-1/2">
+					<Image src="/images/abstract.jpg" width={700} height={700} alt="Profile" />
+				</div>
+			</div>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+			<div className="w-full bg-accent flex flex-row items-center py-28">
+				<div className="flex w-1/2 flex-col items-center">
+					<span className="text-white text-6xl">
+						Turning Ideas into Reality
+					</span>
+				</div>
+				<div className="flex w-1/2 flex-col items-center px-12">
+					<span className="text-white text-2xl font-mono text-justify">
+						Welcome to the portfolio of Agustin Laurito, a software developer who’s been dazzling the tech world with his skills. He's made significant contributions at Acquatron, Finket, and now Sweeppea.
+					</span>
+				</div>
+			</div>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
-}
+			<div className="w-full h-screen flex flex-col items-center bg-black">
+
+				<span className="text-6xl text-light mt-16 mb-8">
+					Experience
+				</span>
+
+				<div className="w-1/2 bg-gray rounded-3xl p-5 flex flex-row gap-5 mt-12">
+					<div className="bg-white rounded-full flex justify-center items-center w-1" />
+
+					<div className="flex flex-col">
+						<span className="text-4xl text-white font-mono">
+							Sweeppea
+						</span>
+						<span className="text-xl text-slate-400 font-mono">
+							Nov. 2022 - Present
+						</span>
+						<span className="text-2xl text-white my-5">
+							Software Engineer
+						</span>
+						<span className="text-md text-white font-mono">Development of multiple applications for company management using Node.js and MongoDB.</span>
+					</div>
+				</div>
+
+				<div className="w-1/2 bg-gray rounded-3xl p-5 flex flex-row gap-5 mt-12">
+					<div className="bg-white rounded-full flex justify-center items-center w-1" />
+
+					<div className="flex flex-col">
+						<span className="text-4xl text-white font-mono">
+							Finket
+						</span>
+						<span className="text-xl text-slate-400 font-mono">
+							Jan 2022 - March 2023
+						</span>
+						<span className="text-2xl text-white my-5">
+							Software Engineer
+						</span>
+						<span className="text-md text-white font-mono">Development of financial solutions using ReactJS, Express and AWS as core technologies.</span>
+					</div>
+				</div>
+
+				<div className="w-1/2 bg-gray rounded-3xl p-5 flex flex-row gap-5 mt-12">
+					<div className="bg-white rounded-full flex justify-center items-center w-4" />
+
+					<div className="flex flex-col">
+						<span className="text-4xl text-white font-mono">
+							Acquatron
+						</span>
+						<span className="text-xl text-slate-400 font-mono">
+							Nov. 2020 - Jan 2022
+						</span>
+						<span className="text-2xl text-white my-5">
+							Software Developer
+						</span>
+						<span className="text-md text-white font-mono">My main task was the development of customized software solutions for the management of the company. Using C++ and MySQL I designed a comprehensive software for stock management and equipment production. This software not only eliminated the need to keep inventory manually, but also maximized efficiency in defining daily production and order fulfillment.</span>
+					</div>
+				</div>
+			</div>
+
+			<div className="w-full h-screen flex flex-col items-center bg-black">
+
+				<span className="text-6xl text-light mt-16 mb-8">
+					Personal Work
+				</span>
+			</div>
+		</div>
+
+
+	)
+};
+
+export default Page;
