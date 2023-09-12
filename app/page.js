@@ -64,11 +64,10 @@ function Page() {
 				</div>
 				<div className="flex w-1/2 flex-col items-center px-12">
 					<span className="text-white text-2xl font-mono text-justify">
-						With three years of hands-on experience in the dynamic startup landscape, I've honed my skills in transforming innovative ideas into functional software solutions. My journey has been defined by collaborating closely with startups, understanding their unique needs, and delivering results-driven digital products. I thrive on the challenge of turning visionary concepts into tangible, market-ready assets, contributing to the growth and success of emerging ventures
+						With three years of hands-on experience in the dynamic startup landscape, I have honed my skills in transforming innovative ideas into functional software solutions. My journey has been defined by collaborating closely with startups, understanding their unique needs, and delivering results-driven digital products. I thrive on the challenge of turning visionary concepts into tangible, market-ready assets, contributing to the growth and success of emerging ventures
 					</span>
 				</div>
 			</div>
-
 
 
 			<div className="w-full min-h-screen flex flex-col items-center bg-accent pb-12">

@@ -15,7 +15,8 @@ function Blob({ time = 0.5, intensity = 0.3, scale = 1}) {
 			u_time: { value: time },
 			u_intensity: { value: intensity },
 		};
-	});
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
 
 	useFrame((state) => {
 		const { clock } = state;
