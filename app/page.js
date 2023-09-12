@@ -59,7 +59,7 @@ function Page() {
 			<div className="w-full bg-black flex flex-row items-center py-28">
 				<div className="flex w-1/2 flex-col items-center">
 					<span className="text-white text-6xl">
-						Turning Ideas into Reality
+						Turning Ideas into <Typewriter words={['Reality', 'Code', 'Profit']} delaySpeed={3500} loop />
 					</span>
 				</div>
 				<div className="flex w-1/2 flex-col items-center px-12">
