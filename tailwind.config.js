@@ -31,7 +31,8 @@ module.exports = {
 					accent: '#2F4550',
 					accentLight: '#576977',
 					light: '#B8DBD9',
-					gray: '#0D0D0D'
+					gray: '#0D0D0D',
+					lightGray: '#DCDCDD'
 				},
 			},
 	},
