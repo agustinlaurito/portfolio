@@ -35,7 +35,7 @@ function Square({ scale = 1 }) {
 			{/* <torusKnotGeometry args={[10, 3, 150, 8, 2, 3]} /> */}
 			<boxGeometry args={[15, 15, 15, 1, 1, 1]} />
 			<meshPhysicalMaterial
-				color={"#0b2a46"}
+				color={"#900CD3"}
 				roughness={1} // Adjust roughness value
 				metalness={0} // Adjust metalness value
 			/>

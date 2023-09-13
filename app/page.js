@@ -106,9 +106,9 @@ function Page() {
 				<div className="flex flex-row justify-evenly w-full">
 
 					<div className="flex flex-col w-fit">
-						<Image src="/images/mockup1.png" alt="Logbook" width={450} height={450} className="rounded-[15%] " />
+						<Image src="/images/mockup1.png" alt="Logbook" width={450} height={450} className="rounded-[15%]" />
 						<span className="ml-3 text-6xl my-8 text-lightGray ">
-							A Volar App
+							A Volar: App
 						</span>
 						<span className="ml-3 max-w-[450px] text-justify text-lg font-bold text-white font-mono">A Volar App is a specialized application tailored for pilots, offering real-time weather updates for all airports across Argentina, along with essential details including runway information, communication frequencies, and regulatory norms.						</span>
 					</div>
@@ -116,7 +116,7 @@ function Page() {
 					<div className="flex flex-col w-fit">
 						<Image src="/images/avolarapp.png" alt="Logbook" width={450} height={450} className="rounded-[15%] " />
 						<span className="ml-3 text-6xl my-8 text-lightGray ">
-							A Volar App
+							A Volar: Logbook
 						</span>
 						<span className="ml-3 max-w-[450px] text-justify text-lg font-bold text-white font-mono">A Volar App is a specialized application tailored for pilots, offering real-time weather updates for all airports across Argentina, along with essential details including runway information, communication frequencies, and regulatory norms.						</span>
 					</div>
