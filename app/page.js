@@ -8,8 +8,15 @@ import { Canvas } from "@react-three/fiber";
 import Blob from "./components/Blob/Blob";
 import { GiAirplane } from 'react-icons/gi';
 import Square from "./components/Square/Square";
+import { useMediaQuery } from "@uidotdev/usehooks";
 
 function Page() {
+
+	const isLargeDevice = useMediaQuery(
+		"only screen and (min-width : 1024px)"
+	);
+
+	console.log(isLargeDevice);
 
 	const descriptions = [
 		{
@@ -40,30 +47,34 @@ function Page() {
 
 	return(
 		<div>
-			<div className="w-full h-screen flex flex-row items-center">
-				<div className="flex w-1/2 flex-col items-center">
-					<div className="text-background text-8xl">
+
+			{/* First Screen */}
+			<div className="w-full h-screen flex flex-col justify-evenly lg:flex-row items-center">
+				<div className="flex w-full lg:w-1/2 flex-col items-center">
+					<div className="w-full text-background text-6xl lg:text-8xl text-center">
 						Agustin Laurito
 					</div>
-					<div className="text-6xl font-mono min-h-[3.75rem]">
+					<div className="text-2xl lg:text-6xl font-mono lg:min-h-[3.75rem]">
 						<Typewriter words={['Software Engineer', 'Helping Startups to Grow']} loop />
 					</div>
 				</div>
-				<div className="w-1/2 h-3/4">
+				{/* LG Blob */}
+				<div className="w-full lg:w-1/2 h-1/2 lg:h-3/4">
 					<Canvas camera={{ position: [0.0, 0.0, 8.0] }}>
-						<Blob scale={1.1} />
+						<Blob scale={1} />
 					</Canvas>
 				</div>
 			</div>
 
-			<div className="w-full bg-black flex flex-row items-center py-28">
-				<div className="flex w-1/2 flex-col items-center">
-					<span className="text-white text-6xl">
+			{/* Black Screen */}
+			<div className="w-full bg-black flex flex-col lg:flex-row items-center py-12 lg:py-28">
+				<div className="flex lg:w-1/2 flex-col text-center  items-center">
+					<span className="text-white text-4xl lg:text-6xl">
 						Turning Ideas into <Typewriter words={['Reality', 'Code', 'Profit']} delaySpeed={2500} loop />
 					</span>
 				</div>
-				<div className="flex w-1/2 flex-col items-center px-12">
-					<span className="text-white text-2xl font-mono text-justify">
+				<div className="flex w-full lg:w-1/2 flex-col items-center px-5">
+					<span className="text-white text-md font-mono text-justify mt-6 lg:mt-0 lg:text-2xl ">
 						With three years of hands-on experience in the dynamic startup landscape, I have honed my skills in transforming innovative ideas into functional software solutions. My journey has been defined by collaborating closely with startups, understanding their unique needs, and delivering results-driven digital products. I thrive on the challenge of turning visionary concepts into tangible, market-ready assets, contributing to the growth and success of emerging ventures
 					</span>
 				</div>
@@ -72,24 +83,24 @@ function Page() {
 
 			<div className="w-full h-screen flex flex-col items-center bg-accent pb-12">
 
-				<span className="text-6xl text-lightGray mt-16 mb-8">
+				<span className="text-6xl text-lightGray mt-8 lg:mt-16 mb-8">
 					Experience
 				</span>
 
-				<div className="flex flex-col h-full justify-evenly items-center">
+				<div className="flex flex-col h-full justify-evenly items-center px-6">
 					{
 						descriptions.map((e, i) =>
-							<div key={i} className="w-3/4 bg-accentLight rounded-full py-4 pl-5 pr-16 flex flex-row gap-5 mt-12 items-center">
+							<div key={i} className="w-full px-4 lg:w-3/4 bg-accentLight rounded-3xl lg:rounded-full py-2 lg:py-4 lg:pl-5 lg:pr-16 flex flex-row gap-2 lg:gap-5 mt-2 lg:mt-12 items-center">
 
-								<div className="bg-white shadow-xl rounded-full p-8 mr-6">
+								<div className="lg:bg-white lg:shadow-xl rounded-full p-2 mr-1 lg:p-8 lg:mr-6">
 									<Image src={e.image} alt="Sweeppea" height={e.size || 100} width={e.size || 100} />
 								</div>
 
 								<div className="flex flex-col">
-									<span className="text-2xl text-white font-mono">{e.business}</span>
-									<span className="text-md text-slate-400 font-mono">{e.dates}</span>
-									<span className="text-xl text-white my-2">{e.title}</span>
-									<span className="text-md text-white font-mono">{e.description}</span>
+									<span className="text-md lg:text-2xl text-white font-mono">{e.business}</span>
+									<span className="text-xs lg:text-md text-slate-400 font-mono">{e.dates}</span>
+									<span className="text-sm lg:text-xl text-white my-1 lg:my-2">{e.title}</span>
+									<span className="text-xs text-justify lg:text-md text-white font-mono">{e.description}</span>
 								</div>
 							</div>
 						)
@@ -98,27 +109,27 @@ function Page() {
 
 			</div>
 
-			<div className="w-full h-screen flex flex-col items-center bg-accent pb-12">
+			<div className="w-full min-h-screen lg:h-screen flex flex-col items-center bg-accent pb-12">
 				<span className="text-6xl text-lightGray my-8">
 					Own Apps
 				</span>
 
-				<div className="flex flex-row justify-evenly w-full">
+				<div className="flex flex-col lg:flex-row lg:justify-evenly w-full">
 
-					<div className="flex flex-col w-fit">
-						<Image src="/images/mockup1.png" alt="Logbook" width={450} height={450} className="rounded-[15%]" />
-						<span className="ml-3 text-6xl my-8 text-lightGray ">
+					<div className="flex flex-col w-fit items-center lg:items-start my-5 lg:my-0">
+						<Image src="/images/mockup1.png" alt="Logbook" width={isLargeDevice ? 450 : 200} height={isLargeDevice ? 450 : 200} className="rounded-[15%]" />
+						<span className="ml-3 text-4xl lg:text-6xl my-4 lg:my-8 text-lightGray ">
 							A Volar: App
 						</span>
-						<span className="ml-3 max-w-[450px] text-justify text-lg font-bold text-white font-mono">A Volar App is a specialized application tailored for pilots, offering real-time weather updates for all airports across Argentina, along with essential details including runway information, communication frequencies, and regulatory norms.						</span>
+						<span className="ml-3 w-full px-16 lg:px-0 lg:max-w-[450px] text-justify text-md lg:text-lg font-bold text-white font-mono">A Volar App is a specialized application tailored for pilots, offering real-time weather updates for all airports across Argentina, along with essential details including runway information, communication frequencies, and regulatory norms.						</span>
 					</div>
 
-					<div className="flex flex-col w-fit">
-						<Image src="/images/avolarapp.png" alt="Logbook" width={450} height={450} className="rounded-[15%] " />
-						<span className="ml-3 text-6xl my-8 text-lightGray ">
+					<div className="flex flex-col w-fit items-center lg:items-start my-5 lg:my-0">
+						<Image src="/images/avolarapp.png" alt="Logbook" width={isLargeDevice ? 450 : 200} height={isLargeDevice ? 450 : 200} className="rounded-[15%]" />
+						<span className="ml-3 text-4xl lg:text-6xl my-4 lg:my-8 text-lightGray ">
 							A Volar: Logbook
 						</span>
-						<span className="ml-3 max-w-[450px] text-justify text-lg font-bold text-white font-mono">A Volar App is a specialized application tailored for pilots, offering real-time weather updates for all airports across Argentina, along with essential details including runway information, communication frequencies, and regulatory norms.						</span>
+						<span className="ml-3 w-full px-16 lg:px-0 lg:max-w-[450px] text-justify text-md lg:text-lg font-bold text-white font-mono">A Volar App is a specialized application tailored for pilots, offering real-time weather updates for all airports across Argentina, along with essential details including runway information, communication frequencies, and regulatory norms.						</span>
 					</div>
 
 				</div>
@@ -126,31 +137,29 @@ function Page() {
 			</div>
 
 
-			<div className="w-full h-screen flex flex-col items-center bg-accent pb-12">
+			<div className="w-full h-screen flex flex-col items-center bg-accent lg:pb-12">
 
-				<div className="h-1/2 flex flex-col items-center justify-evenly">
-					<span className="text-8xl text-lightGray font-bowlby">
+				<div className="lg:h-1/2 h-3/4 flex flex-col items-center justify-evenly items-center justify-evenly">
+
+					<span className="text-6xl lg:text-8xl text-lightGray font-bowlby text-center">
 						Get in Touch!
 					</span>
 
-					<span className="max-w-[55%] justify-text text-center text-4xl text-lightGray">Don&apos;t miss the opportunity to discover what the future holds! Reach out, and let&apos;s work together to bring your ideas to life.</span>
+					<span className="lg:max-w-[55%] lg:px-0 px-4 justify-text text-center text-xl lg:text-4xl text-lightGray">Don&apos;t miss the opportunity to discover what the future holds! Reach out, and let&apos;s work together to bring your ideas to life.</span>
 
-					<motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="bg-accentLight py-6 px-12 rounded-xl text-4xl text-white">Contact Me</motion.button>
+					<motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="bg-accentLight py-4 px-8 lg:py-6 lg:px-12 rounded-xl text-4xl text-white">Contact Me</motion.button>
 				</div>
 
 
 
-				<div className="h-1/2 w-full flex flex-col justify-evenly items-center overflow-hidden">
+				<div className="h-1/4 lg:h-1/2 w-full flex flex-col justify-evenly items-center overflow-hidden">
 
 					<div className="flex w-full ml-8">
-						<spline-viewer url="https://prod.spline.design/GPFmPtjGqd2pBiux/scene.splinecode"></spline-viewer>
+						<spline-viewer loading-anim url="https://prod.spline.design/GPFmPtjGqd2pBiux/scene.splinecode"></spline-viewer>
 					</div>
 				</div>
 
-				<span className="text-lightGray font-bowlby">© 2023 Agustin Laurito</span>
-
-
-
+				<span className="text-lightGray font-bowlby mb-12 lg:mb-0">© 2023 Agustin Laurito</span>
 
 			</div>
 
