@@ -97,10 +97,10 @@ function Page() {
 								</div>
 
 								<div className="flex flex-col">
-									<span className="text-md lg:text-2xl text-white font-mono">{e.business}</span>
-									<span className="text-xs lg:text-md text-slate-400 font-mono">{e.dates}</span>
-									<span className="text-sm lg:text-xl text-white my-1 lg:my-2">{e.title}</span>
-									<span className="text-xs text-justify lg:text-md text-white font-mono">{e.description}</span>
+									<span className="text-md lg:text-4xl text-white font-mono">{e.business}</span>
+									<span className="text-xs lg:text-lg text-slate-400 font-mono">{e.dates}</span>
+									<span className="text-sm lg:text-2xl text-white my-1 lg:my-2">{e.title}</span>
+									<span className="text-xs text-justify lg:text-lg text-white font-mono">{e.description}</span>
 								</div>
 							</div>
 						)
