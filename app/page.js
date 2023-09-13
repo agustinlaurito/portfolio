@@ -59,7 +59,7 @@ function Page() {
 			<div className="w-full bg-black flex flex-row items-center py-28">
 				<div className="flex w-1/2 flex-col items-center">
 					<span className="text-white text-6xl">
-						Turning Ideas into <Typewriter words={['Reality', 'Code', 'Profit']} delaySpeed={3500} loop />
+						Turning Ideas into <Typewriter words={['Reality', 'Code', 'Profit']} delaySpeed={2500} loop />
 					</span>
 				</div>
 				<div className="flex w-1/2 flex-col items-center px-12">
@@ -94,10 +94,18 @@ function Page() {
 					)
 				}
 
-				<div className="w-full h-1/4 py-12" >
+				{/* <div className="w-full h-1/4 py-12" >
 					<Canvas camera={{ position: [0.0, 0.0, 50.0] }}>
 						<Square />
 					</Canvas>
+				</div> */}
+
+				<span className="text-6xl text-light mt-16 mb-8">
+					Own Apps
+				</span>
+
+				<div className="flex flex-row">
+
 				</div>
 
 			</div>
