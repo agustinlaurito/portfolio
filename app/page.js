@@ -8,20 +8,19 @@ import { Canvas } from "@react-three/fiber";
 import Blob from "./components/Blob/Blob";
 import { GiAirplane } from 'react-icons/gi';
 import Square from "./components/Square/Square";
-import { useMediaQuery } from "@uidotdev/usehooks";
 import { useEffect } from "react";
 
 function Page() {
 
-	const isLargeDevice = useMediaQuery("only screen and (min-width : 1024px)");
 	const [isLarge, setLarge] = useState(false);
 
 	useEffect(() => {
+
 		if (typeof window !== "undefined") {
-			// This code will only run on the client side
+			const isLargeDevice = window.matchMedia("only screen and (min-width : 1024px)").matches;
 			setLarge(isLargeDevice);
 		}
-	}, [isLargeDevice]);
+	}, []);
 
 	const descriptions = [
 		{
