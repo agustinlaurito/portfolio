@@ -13,16 +13,15 @@ import { useEffect } from "react";
 
 function Page() {
 
-
-
-	const isLargeDevice = useMediaQuery(
-		"only screen and (min-width : 1024px)"
-	);
+	const isLargeDevice = useMediaQuery("only screen and (min-width : 1024px)");
 	const [isLarge, setLarge] = useState(false);
+
 	useEffect(() => {
-		setLarge(isLargeDevice);
+		if (typeof window !== "undefined") {
+			// This code will only run on the client side
+			setLarge(isLargeDevice);
+		}
 	}, [isLargeDevice]);
-// use hideOnMobile in your render!
 
 	const descriptions = [
 		{
