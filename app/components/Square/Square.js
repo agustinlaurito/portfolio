@@ -26,13 +26,14 @@ function Square({ scale = 1 }) {
 		rotation.current += 0.005;
 
 		// Update the mesh's rotation
-		// mesh.current.rotation.x = rotation.current;
+		mesh.current.rotation.x = rotation.current;
 		mesh.current.rotation.y = rotation.current;
 	});
 
 	return (
-		<mesh ref={mesh} scale={1.5}>
-			<torusKnotGeometry args={[10, 3, 150, 8, 2, 3]} />
+		<mesh ref={mesh} scale={scale}>
+			{/* <torusKnotGeometry args={[10, 3, 150, 8, 2, 3]} /> */}
+			<boxGeometry args={[15, 15, 15, 1, 1, 1]} />
 			<meshPhysicalMaterial
 				color={"#0b2a46"}
 				roughness={1} // Adjust roughness value

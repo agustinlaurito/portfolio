@@ -34,6 +34,9 @@ module.exports = {
 					gray: '#0D0D0D',
 					lightGray: '#DCDCDD'
 				},
+				fontFamily: {
+					'bowlby': ['var(--font-bowlby)']
+				}
 			},
 	},
 	plugins: [],

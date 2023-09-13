@@ -72,7 +72,7 @@ function Page() {
 
 			<div className="w-full h-screen flex flex-col items-center bg-accent pb-12">
 
-				<span className="text-6xl text-light mt-16 mb-8">
+				<span className="text-6xl text-lightGray mt-16 mb-8">
 					Experience
 				</span>
 
@@ -99,7 +99,7 @@ function Page() {
 			</div>
 
 			<div className="w-full h-screen flex flex-col items-center bg-accent pb-12">
-				<span className="text-6xl text-light my-8">
+				<span className="text-6xl text-lightGray my-8">
 					Own Apps
 				</span>
 
@@ -122,6 +122,33 @@ function Page() {
 					</div>
 
 				</div>
+
+			</div>
+
+
+			<div className="w-full h-screen flex flex-col items-center bg-accent pb-12">
+
+				<div className="h-1/2 flex flex-col items-center justify-evenly">
+					<span className="text-8xl text-lightGray font-bowlby">
+						Get in Touch!
+					</span>
+
+					<span className="max-w-[55%] justify-text text-center text-4xl text-lightGray">Don&apos;t miss the opportunity to discover what the future holds! Reach out, and let&apos;s work together to bring your ideas to life.</span>
+
+					<motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="bg-accentLight py-6 px-12 rounded-xl text-4xl text-white">Contact Me</motion.button>
+				</div>
+
+
+
+				<div className="h-1/2 w-full flex flex-col justify-evenly items-center">
+					<Canvas>
+						<Square scale={.1} />
+					</Canvas>
+
+					<span className="text-lightGray font-bowlby">© 2023 Agustin Laurito</span>
+
+				</div>
+
 			</div>
 
 

@@ -1,7 +1,10 @@
 import './globals.css'
 import { Staatliches } from 'next/font/google'
+import { Bowlby_One } from 'next/font/google'
+
 
 const inter = Staatliches({ subsets: ['latin'], weight: ['400'] })
+const bowlby = Bowlby_One({ subsets: ['latin'], weight: ['400'], variable: '--font-bowlby', })
 
 export const metadata = {
 	title: 'Agustin Laurito',
@@ -19,7 +22,7 @@ export default function RootLayout({ children }) {
 				<link rel="icon" href="/favicon.ico" />
 				{/* Add any necessary CSS or JavaScript files */}
 			</head>
-			<body className={inter.className}>{children}</body>
+			<body className={`${inter.className} ${bowlby.variable}`}>{children}</body>
 		</html>
 	)
 }
