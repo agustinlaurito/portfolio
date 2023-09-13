@@ -70,62 +70,60 @@ function Page() {
 			</div>
 
 
-			<div className="w-full min-h-screen flex flex-col items-center bg-accent pb-12">
+			<div className="w-full h-screen flex flex-col items-center bg-accent pb-12">
 
 				<span className="text-6xl text-light mt-16 mb-8">
 					Experience
 				</span>
 
-				{
-					descriptions.map((e, i) =>
-						<div key={i} className="w-3/4 bg-accentLight rounded-full py-4 pl-5 pr-16 flex flex-row gap-5 mt-12 items-center">
+				<div className="flex flex-col h-full justify-evenly items-center">
+					{
+						descriptions.map((e, i) =>
+							<div key={i} className="w-3/4 bg-accentLight rounded-full py-4 pl-5 pr-16 flex flex-row gap-5 mt-12 items-center">
 
-							<div className="bg-white shadow-xl rounded-full p-8 mr-6">
-								<Image src={e.image} alt="Sweeppea" height={e.size || 100} width={e.size || 100} />
+								<div className="bg-white shadow-xl rounded-full p-8 mr-6">
+									<Image src={e.image} alt="Sweeppea" height={e.size || 100} width={e.size || 100} />
+								</div>
+
+								<div className="flex flex-col">
+									<span className="text-2xl text-white font-mono">{e.business}</span>
+									<span className="text-md text-slate-400 font-mono">{e.dates}</span>
+									<span className="text-xl text-white my-2">{e.title}</span>
+									<span className="text-md text-white font-mono">{e.description}</span>
+								</div>
 							</div>
+						)
+					}
+				</div>
 
-							<div className="flex flex-col">
-								<span className="text-2xl text-white font-mono">{e.business}</span>
-								<span className="text-md text-slate-400 font-mono">{ e.dates }</span>
-								<span className="text-xl text-white my-2">{e.title}</span>
-								<span className="text-md text-white font-mono">{e.description}</span>
-							</div>
-						</div>
-					)
-				}
+			</div>
 
-				{/* <div className="w-full h-1/4 py-12" >
-					<Canvas camera={{ position: [0.0, 0.0, 50.0] }}>
-						<Square />
-					</Canvas>
-				</div> */}
-
-				<span className="text-6xl text-light mt-16 mb-8">
+			<div className="w-full h-screen flex flex-col items-center bg-accent pb-12">
+				<span className="text-6xl text-light my-8">
 					Own Apps
 				</span>
 
 				<div className="flex flex-row justify-evenly w-full">
 
 					<div className="flex flex-col w-fit">
-						<Image src="/images/mockup1.png" alt="Logbook" width={450} height={450} className="rounded-[15%] grayscale-[45%]" />
-						<span className="text-6xl my-8 text-lightGray ">
+						<Image src="/images/mockup1.png" alt="Logbook" width={450} height={450} className="rounded-[15%] " />
+						<span className="ml-3 text-6xl my-8 text-lightGray ">
 							A Volar App
 						</span>
-						<span className="max-w-[450px] text-justify text-lg font-bold text-white font-mono">A Volar App is a specialized application tailored for pilots, offering real-time weather updates for all airports across Argentina, along with essential details including runway information, communication frequencies, and regulatory norms.						</span>
+						<span className="ml-3 max-w-[450px] text-justify text-lg font-bold text-white font-mono">A Volar App is a specialized application tailored for pilots, offering real-time weather updates for all airports across Argentina, along with essential details including runway information, communication frequencies, and regulatory norms.						</span>
 					</div>
 
 					<div className="flex flex-col w-fit">
-						<Image src="/images/avolarapp.png" alt="Logbook" width={450} height={450} className="rounded-[15%]" />
-						<span className="text-6xl my-8 text-lightGray ">
-							A Volar: Logbook
+						<Image src="/images/avolarapp.png" alt="Logbook" width={450} height={450} className="rounded-[15%] " />
+						<span className="ml-3 text-6xl my-8 text-lightGray ">
+							A Volar App
 						</span>
-						<span className="max-w-[450px] text-justify text-lg font-bold text-white font-mono">A Volar App is a specialized application tailored for pilots, offering real-time weather updates for all airports across Argentina, along with essential details including runway information, communication frequencies, and regulatory norms.						</span>
+						<span className="ml-3 max-w-[450px] text-justify text-lg font-bold text-white font-mono">A Volar App is a specialized application tailored for pilots, offering real-time weather updates for all airports across Argentina, along with essential details including runway information, communication frequencies, and regulatory norms.						</span>
 					</div>
 
-
 				</div>
-
 			</div>
+
 
 
 		</div>
