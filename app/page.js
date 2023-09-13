@@ -9,14 +9,20 @@ import Blob from "./components/Blob/Blob";
 import { GiAirplane } from 'react-icons/gi';
 import Square from "./components/Square/Square";
 import { useMediaQuery } from "@uidotdev/usehooks";
+import { useEffect } from "react";
 
 function Page() {
+
+
 
 	const isLargeDevice = useMediaQuery(
 		"only screen and (min-width : 1024px)"
 	);
-
-	console.log(isLargeDevice);
+	const [isLarge, setLarge] = useState(false);
+	useEffect(() => {
+		setLarge(isLargeDevice);
+	}, [isLargeDevice]);
+// use hideOnMobile in your render!
 
 	const descriptions = [
 		{
@@ -117,7 +123,7 @@ function Page() {
 				<div className="flex flex-col lg:flex-row lg:justify-evenly w-full">
 
 					<div className="flex flex-col w-fit items-center lg:items-start my-5 lg:my-0">
-						<Image src="/images/mockup1.png" alt="Logbook" width={isLargeDevice ? 450 : 200} height={isLargeDevice ? 450 : 200} className="rounded-[15%]" />
+						<Image src="/images/mockup1.png" alt="Logbook" width={isLarge ? 450 : 200} height={isLarge ? 450 : 200} className="rounded-[15%]" />
 						<span className="ml-3 text-4xl lg:text-6xl my-4 lg:my-8 text-lightGray ">
 							A Volar: App
 						</span>
@@ -125,7 +131,7 @@ function Page() {
 					</div>
 
 					<div className="flex flex-col w-fit items-center lg:items-start my-5 lg:my-0">
-						<Image src="/images/avolarapp.png" alt="Logbook" width={isLargeDevice ? 450 : 200} height={isLargeDevice ? 450 : 200} className="rounded-[15%]" />
+						<Image src="/images/avolarapp.png" alt="Logbook" width={isLarge ? 450 : 200} height={isLarge ? 450 : 200} className="rounded-[15%]" />
 						<span className="ml-3 text-4xl lg:text-6xl my-4 lg:my-8 text-lightGray ">
 							A Volar: Logbook
 						</span>
