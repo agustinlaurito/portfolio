@@ -8,7 +8,7 @@ import { Canvas } from "@react-three/fiber";
 import Blob from "./components/Blob/Blob";
 import { GiAirplane } from 'react-icons/gi';
 import Square from "./components/Square/Square";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 function Page() {
 
