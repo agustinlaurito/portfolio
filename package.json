@@ -9,7 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-three/drei": "^9.83.9",
     "@react-three/fiber": "^8.14.1",
+    "@splinetool/loader": "^0.9.446",
+    "@splinetool/r3f-spline": "^1.0.2",
+    "@splinetool/runtime": "^0.9.446",
     "@types/three": "^0.156.0",
     "autoprefixer": "10.4.15",
     "eslint": "8.49.0",

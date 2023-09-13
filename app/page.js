@@ -140,14 +140,17 @@ function Page() {
 
 
 
-				<div className="h-1/2 w-full flex flex-col justify-evenly items-center">
-					<Canvas>
-						<Square scale={.1} />
-					</Canvas>
+				<div className="h-1/2 w-full flex flex-col justify-evenly items-center overflow-hidden">
 
-					<span className="text-lightGray font-bowlby">© 2023 Agustin Laurito</span>
-
+					<div className="flex w-full ml-8">
+						<spline-viewer url="https://prod.spline.design/GPFmPtjGqd2pBiux/scene.splinecode"></spline-viewer>
+					</div>
 				</div>
+
+				<span className="text-lightGray font-bowlby">© 2023 Agustin Laurito</span>
+
+
+
 
 			</div>
 
