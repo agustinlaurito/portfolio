@@ -125,7 +125,7 @@ function Page() {
 						<span className="ml-3 text-4xl lg:text-6xl my-4 lg:my-8 text-lightGray ">
 							A Volar: App
 						</span>
-						<span className="ml-3 w-full px-16 lg:px-0 lg:max-w-[450px] text-justify text-md lg:text-lg font-bold text-white font-mono">A Volar App is a specialized application tailored for pilots, offering real-time weather updates for all airports across Argentina, along with essential details including runway information, communication frequencies, and regulatory norms.						</span>
+						<span className="ml-3 w-full px-16 lg:px-0 lg:max-w-[450px] text-justify text-md lg:text-lg font-bold text-lightGray font-mono">A Volar App is a specialized application tailored for pilots, offering real-time weather updates for all airports across Argentina, along with essential details including runway information, communication frequencies, and regulatory norms.						</span>
 					</div>
 
 					<div className="flex flex-col w-fit items-center lg:items-start my-5 lg:my-0">
@@ -133,11 +133,37 @@ function Page() {
 						<span className="ml-3 text-4xl lg:text-6xl my-4 lg:my-8 text-lightGray ">
 							A Volar: Logbook
 						</span>
-						<span className="ml-3 w-full px-16 lg:px-0 lg:max-w-[450px] text-justify text-md lg:text-lg font-bold text-white font-mono">A Volar App is a specialized application tailored for pilots, offering real-time weather updates for all airports across Argentina, along with essential details including runway information, communication frequencies, and regulatory norms.						</span>
+						<span className="ml-3 w-full px-16 lg:px-0 lg:max-w-[450px] text-justify text-md lg:text-lg font-bold text-lightGray font-mono">A Volar App is a specialized application tailored for pilots, offering real-time weather updates for all airports across Argentina, along with essential details including runway information, communication frequencies, and regulatory norms.						</span>
 					</div>
 
 				</div>
 
+			</div>
+
+			<div className="w-full min-h-screen lg:h-screen flex flex-col items-center bg-accent pb-12 justify-evenly">
+
+				<span className="text-6xl text-lightGray ">
+					About Me
+				</span>
+
+				<div className="flex flex-col lg:flex-row justify-center lg:items-end items-center">
+					<Image src="/images/aboutme.png" alt="About Me" width={isLarge ? 300 : 200} height={isLarge ? 300 : 100} />
+					<span className="mx-16 mt-5 lg:mt-0 lg:px-0 lg:max-w-[50%] text-justify text-md lg:text-lg font-bold text-lightGray font-mono">
+						I started my career as an electronic technician in an SME in the productive sector at the end of 2020. A few months later I was promoted to purchasing manager, where in parallel to my tasks I developed a screen system in C++ which served to reduce delivery times from two weeks to two days. In March 2022, I started working as a Full Stack developer, specialising in the Back End. In April I launched a pilot oriented application called A Volar App, which has an active user base of 1000 users. I have a deep passion for aviation, which is not only reflected in my role as a pilot but also extends to my career as a software engineer.
+					</span>
+
+				</div>
+
+				<span className="text-6xl text-lightGray lg:my-0 my-5 lg:mb-2">
+					Gallery
+				</span>
+
+				<div className="flex flex-col lg:flex-row justify-evenly items-center gap-5 w-full h-[45%]">
+					<Image src="/images/air/2.jpg" alt="About Me" width="0" height="0" sizes="100%" className="rounded-3xl w-3/4 h-auto lg:w-auto lg:h-full" />
+					<Image src="/images/air/3.jpg" alt="About Me" width="0" height="0" sizes="100%" className="rounded-3xl w-3/4 h-auto lg:w-auto lg:h-full" />
+					<Image src="/images/air/4.jpg" alt="About Me" width="0" height="0" sizes="100%" className="rounded-3xl w-3/4 h-auto lg:w-auto lg:h-full" />
+					<Image src="/images/air/5.jpg" alt="About Me" width="0" height="0" sizes="100%" className="rounded-3xl w-3/4 h-auto lg:w-auto lg:h-full" />
+				</div>
 			</div>
 
 
@@ -153,8 +179,6 @@ function Page() {
 
 					<motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="bg-accentLight py-4 px-8 lg:py-6 lg:px-12 rounded-xl text-4xl text-white">Contact Me</motion.button>
 				</div>
-
-
 
 				<div className="h-1/4 lg:h-1/2 w-full flex flex-col justify-evenly items-center overflow-hidden">
 
