@@ -10,6 +10,8 @@ import { GiAirplane } from 'react-icons/gi';
 import Square from "./components/Square/Square";
 import { useEffect, useState } from "react";
 
+import { AiFillLinkedin } from 'react-icons/ai';
+
 function Page() {
 
 	const [isLarge, setLarge] = useState(false);
@@ -177,7 +179,11 @@ function Page() {
 
 					<span className="lg:max-w-[55%] lg:px-0 px-4 justify-text text-center text-xl lg:text-4xl text-lightGray">Don&apos;t miss the opportunity to discover what the future holds! Reach out, and let&apos;s work together to bring your ideas to life.</span>
 
-					<motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="bg-accentLight py-4 px-8 lg:py-6 lg:px-12 rounded-xl text-4xl text-white">Contact Me</motion.button>
+					<AiFillLinkedin size='4rem' color='F4F4F9' className="mt-5 cursor-pointer" onClick={() => window.open('https://www.linkedin.com/in/agustinlaurito/', "_blank", "noreferrer")} />
+
+					{/* <span className="my-5 lg:max-w-[55%] lg:px-0 px-4 justify-text text-center text-xl lg:text-4xl text-lightGray">Or</span>
+
+					<motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="bg-accentLight py-4 px-8 lg:py-6 lg:px-12 rounded-xl text-4xl text-white">Contact Me</motion.button> */}
 				</div>
 
 				<div className="h-1/4 lg:h-1/2 w-full flex flex-col justify-evenly items-center overflow-hidden">
